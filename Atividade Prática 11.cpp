@@ -20,7 +20,7 @@ typedef struct BinaryTree {
     int size;
 } BinaryTree;
 
-// Função auxiliar para criar um novo nó
+// Funï¿½ï¿½o auxiliar para criar um novo nï¿½
 TreeNode* createNewNode(int data) {
     TreeNode* newNode = (TreeNode*) malloc(sizeof(TreeNode));
     newNode->data = data;
@@ -29,17 +29,17 @@ TreeNode* createNewNode(int data) {
     return newNode;
 }
 
-// Função para criar uma árvore binária vazia
+// Funï¿½ï¿½o para criar uma ï¿½rvore binï¿½ria vazia
 BinaryTree* createBinaryTree() {
     BinaryTree* newBinaryTree = (BinaryTree*) malloc(sizeof(BinaryTree));
     newBinaryTree->size = 0;
     return newBinaryTree;
 }
 
-// Função para inserir um novo nó na árvore
+// Funï¿½ï¿½o para inserir um novo nï¿½ na ï¿½rvore
 void insertNode(BinaryTree* binaryTree, int data) {
     if (binaryTree->size == MAX_SIZE) {
-        printf("A árvore está cheia.\n");
+        printf("A ï¿½rvore estï¿½ cheia.\n");
         return;
     }
 
@@ -47,16 +47,16 @@ void insertNode(BinaryTree* binaryTree, int data) {
     binaryTree->nodes[binaryTree->size] = newNode;
     binaryTree->size++;
 
-    // Verifica se a árvore é vazia
+    // Verifica se a ï¿½rvore ï¿½ vazia
     if (binaryTree->size == 1) {
         return;
     }
 
-    // Encontra o nó pai para inserir o novo nó
+    // Encontra o nï¿½ pai para inserir o novo nï¿½
     int parentIndex = (binaryTree->size - 2) / 2;
     TreeNode* parentNode = binaryTree->nodes[parentIndex];
 
-    // Insere o novo nó como filho do nó pai
+    // Insere o novo nï¿½ como filho do nï¿½ pai
     if (parentIndex % 2 == 0) {
         parentNode->left = newNode;
     } else {
@@ -64,15 +64,15 @@ void insertNode(BinaryTree* binaryTree, int data) {
     }
 }
 
-// Função para construir uma árvore binária a partir de uma lista de números
-// Esta função retorna todos os elementos repetidos na lista
+// Funï¿½ï¿½o para construir uma ï¿½rvore binï¿½ria a partir de uma lista de nï¿½meros
+// Esta funï¿½ï¿½o retorna todos os elementos repetidos na lista
 int* buildBinaryTreeFromList(int* list, int size, BinaryTree* binaryTree, int* repeatedElements) {
     int i, j, k;
     for (i = 0; i < size; i++) {
         int data = list[i];
         int isRepeated = 0;
 
-        // Verifica se o elemento já existe na árvore
+        // Verifica se o elemento jï¿½ existe na ï¿½rvore
         for (j = 0; j < binaryTree->size; j++) {
             if (binaryTree->nodes[j]->data == data) {
                 repeatedElements[k] = data;
@@ -82,7 +82,7 @@ int* buildBinaryTreeFromList(int* list, int size, BinaryTree* binaryTree, int* r
             }
         }
 
-        // Insere o elemento na árvore
+        // Insere o elemento na ï¿½rvore
         if (!isRepeated) {
             insertNode(binaryTree, data);
         }
@@ -91,7 +91,7 @@ int* buildBinaryTreeFromList(int* list, int size, BinaryTree* binaryTree, int* r
     return repeatedElements;
 }
 
-// Função principal para testar a implementação
+// Funï¿½ï¿½o principal para testar a implementaï¿½ï¿½o
 int main() {
 	
 	setlocale(LC_ALL,"Portuguese");
@@ -102,7 +102,7 @@ int main() {
     int repeatedElements[MAX_SIZE];
     int* repeated = buildBinaryTreeFromList(list, size, binaryTree, repeatedElements);
 
-    printf("Árvore binária:\n");
+    printf("ï¿½rvore binï¿½ria:\n");
     for (int i = 0; i < binaryTree->size; i++)
 	{
 	printf("%d ", binaryTree->nodes[i]->data);
@@ -116,8 +116,8 @@ int main() {
         i++;
     }
     printf("\n");
-}
+    }
 
-return 0;
+    return 0;
 
 }
