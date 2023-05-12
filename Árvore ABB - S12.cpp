@@ -1,3 +1,8 @@
+/*
+Aluno: Luiz Filipe Neuwirth - 2111287
+Data: 12/05/2023
+*/
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <locale.h>
